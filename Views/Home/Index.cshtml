@@ -1,0 +1,70 @@
+﻿@model List<User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a asp-action="Register" asp-controller="Home" class="btn btn-success">New User</a>
+</p>
+@if (Model != null) {
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Departament
+            </th>
+            <th>
+                Job
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                Salt
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Surname
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Departament
+            </td>
+            <td>
+                @item.Job
+            </td>
+            <td>
+                @item.Password
+            </td>
+            <td>
+                @item.Salt
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+}
+else { 
+<h1 style="color:red">There are no user in the database</h1>
+}

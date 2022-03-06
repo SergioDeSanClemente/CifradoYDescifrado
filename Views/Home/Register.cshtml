@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Registro";
+}
+
+<h1>Registro de Usuario</h1>
+<hr />
+<div class="col-md-12">
+    <form asp-action="Register">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name" name="name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Surname</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Surname" name="surname">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Department</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Department" name="department">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Job</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Job" name="job">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Password</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Password" name="password">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Usuario" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
